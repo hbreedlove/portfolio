@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import Header from './components/header/Header';
+// import Footer from './components/footer/Footer';
+import HomeScreen from './components/screens/home-screen/HomeScreen';
+import { routes } from './constants/routes';
+import './App.scss';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route exact path={routes.ROOT} component={HomeScreen} />
+          <Route exact path={routes.PROJECTS} component={HomeScreen} />
+          <Route exact path={routes.CONTACT} component={HomeScreen} />
+          <Route exact path={routes.ABOUT} component={HomeScreen} />
+        </Switch>
+        {/* <Footer /> */}
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

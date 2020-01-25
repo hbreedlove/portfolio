@@ -1,0 +1,27 @@
+@import 'src/App.scss';
+
+.home-screen__welcome {
+  display: flex;
+  flex-direction: column;
+  padding: 10% 7% 0 7%;
+
+  .welcome-heading {
+    font-size: 50px;
+  }
+}
+
+.welcome-text {
+  font-size: 20px;
+  max-width: 40%;
+
+  a {
+    color: $colorBlack;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.15s;
+
+    &:hover {
+      color: rgb(255, 130, 100);
+    }
+  }
+}
